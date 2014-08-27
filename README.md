@@ -1,7 +1,7 @@
 YOURLS-filter-code
 ==================
 
-Yourls plugin to allow you to select 300 Status Code to return per keyword
+Yourls plugin to allow you to select 3XX Status Code to return per keyword.
 
 Plugin tested for YOURLS 1.7
 
