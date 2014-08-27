@@ -9,7 +9,7 @@ Plugin tested for YOURLS 1.7
 ####Installation
 In /user/plugins, create a new folder named filter-code.
 Drop these files in that directory.
-Go to the Plugins administration page (*Manage Plugins*)->and activate the plugin: *Status Code by Keyword*
+Go to the Plugins administration page (*Manage Plugins*)->and activate the plugin: *Status Code by Keyword*.
 After activation, you should see *Status Code Page* listed as a page under *Manage Plugins*
 
 ####Status Code Page Usage
