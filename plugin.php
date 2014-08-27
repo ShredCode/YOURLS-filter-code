@@ -63,7 +63,7 @@ function shred_code_status_code_do_page() {
         yourls_verify_nonce(basename(__DIR__));
         
         // Process form
-        shred_code_samplepage_update_option();
+        shred_code_page_update_code();
     }
     
     // Create nonce
@@ -122,7 +122,7 @@ HTML;
 }
 
 // Update option in database
-function shred_code_samplepage_update_option() {
+function shred_code_page_update_code() {
     $input_keyword = $_POST['input_keyword'];
     $input_code    = $_POST['input_code'];
     
