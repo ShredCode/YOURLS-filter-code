@@ -27,7 +27,7 @@ function shred_code_delete_status_code($args) {
     global $ydb;
     $keyword = $args[0];
     $keyword = yourls_escape(yourls_sanitize_string($keyword));
-    $delete  = $ydb->query("DELETE FROM ". SHRED_CODE_TABLE_NAME ."WHERE keyword = '$keyword';");
+    $delete  = $ydb->query("DELETE FROM ". SHRED_CODE_TABLE_NAME ." WHERE keyword = '$keyword';");
 }
 
 yourls_add_filter('redirect_code', 'shred_code_find_status_code');
