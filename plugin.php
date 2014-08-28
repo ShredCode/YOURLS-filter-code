@@ -36,12 +36,9 @@ yourls_add_filter('redirect_code', 'shred_code_find_status_code');
 //lookup status for the keyword - default if not found in table
 function shred_code_find_status_code($code, $location) {
     global $ydb;
-    //global $keyword;
-    //$keyword = yourls_escape( yourls_sanitize_string( $keyword ) );
-    $url_components = parse_url($location);
-    if (!empty($url_components['query']))
-        $location = rtrim($location, '?');
-    $status_code = $ydb->get_var("SELECT sc.code FROM ". SHRED_CODE_TABLE_NAME ." AS sc INNER JOIN yourls_url AS y ON y.keyword = sc.keyword WHERE y.url='$location';");
+    global $keyword;
+    $keyword = yourls_escape( yourls_sanitize_string( $keyword ) );
+    $status_code = $ydb->get_var("SELECT sc.code FROM ". SHRED_CODE_TABLE_NAME ." AS sc INNER JOIN yourls_url AS y ON y.keyword = sc.keyword WHERE y.keyword='$keyword';");
     
     if (!$status_code) {
         $status_code = $code;
