@@ -15,3 +15,6 @@ After activation, you should see *Status Code Page* listed as a page under *Mana
 ####Status Code Page Usage
 Add keyword to 3XX status codes associations from the dropdowns presented.  The 
 table will show any existing mapping.  If no mapping is shown or defined, 301 is used as the default code.
+
+####Screen Shot - Admin Page
+![Plugin Admin Page] (img/Shred_Code_Plugin_page.jpg)
