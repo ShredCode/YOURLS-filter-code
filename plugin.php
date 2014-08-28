@@ -9,9 +9,10 @@ Author: ShredCode <http://www.shredcode.com>
 Author URI: https://www.github.com/ShredCode 
 */
 
-DEFINE("PLUGIN_NAME", basename(__DIR__));
+DEFINE("SHRED_CODE_PLUGIN_NAME", basename(__DIR__));
 DEFINE("SHRED_CODE_TABLE_NAME", 'shred_code_filter_code');
-yourls_add_action('activated_' . PLUGIN_NAME . '/plugin.php', 'shred_code_create_code_table');
+
+yourls_add_action('activated_' . SHRED_CODE_PLUGIN_NAME . '/plugin.php', 'shred_code_create_code_table');
 
 //create table if not created
 function shred_code_create_code_table($args) {
@@ -53,7 +54,7 @@ function shred_code_find_status_code($code, $location) {
 yourls_add_action('plugins_loaded', 'shred_code_status_add_page');
 
 function shred_code_status_add_page() {
-    yourls_register_plugin_page(PLUGIN_NAME, 'Status Code Page', 'shred_code_status_code_do_page');
+    yourls_register_plugin_page(SHRED_CODE_PLUGIN_NAME, 'Status Code Page', 'shred_code_status_code_do_page');
 }
 
 
@@ -62,14 +63,14 @@ function shred_code_status_code_do_page() {
     // Check if a form was submitted
     if (isset($_POST['input_code']) && isset($_POST['input_keyword'])) {
         // Check nonce
-        yourls_verify_nonce( PLUGIN_NAME );
+        yourls_verify_nonce( SHRED_CODE_PLUGIN_NAME );
         
         // Process form
         shred_code_page_update_code();
     }
     
     // Create nonce
-    $nonce = yourls_create_nonce( PLUGIN_NAME );
+    $nonce = yourls_create_nonce( SHRED_CODE_PLUGIN_NAME );
     
     echo <<<HTML
 		<h2>Status Code Plugin Administration Page</h2>
