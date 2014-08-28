@@ -41,10 +41,10 @@ function shred_code_find_status_code($code, $location) {
     $url_components = parse_url($location);
     if (!empty($url_components['query']))
         $location = rtrim($location, '?');
-    $status_code = $ydb->get_var("SELECT sc.code FROM ". SHRED_CODE_TABLE_NAME ." AS sc,yourls_url WHERE yourls_url.keyword = sc.keyword AND yourls_url.url='$location';");
+    $status_code = $ydb->get_var("SELECT sc.code FROM ". SHRED_CODE_TABLE_NAME ." AS sc INNER JOIN yourls_url AS y ON y.keyword = sc.keyword WHERE y.url='$location';");
     
     if (!$status_code) {
-        $status_code = '301';
+        $status_code = $code;
     }
     return $status_code;
 }
@@ -100,7 +100,7 @@ HTML;
             $dd .= '<option value=' . $keyword_result->keyword . '>' . $keyword_result->keyword . '</option>' . "\n";
         }
         $dd .= '</select>' . "\n";
-        echo "$dd";
+        echo $dd;
     } else {
         echo "<h3>No keywords found</h3>";
     }
