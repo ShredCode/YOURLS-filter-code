@@ -9,8 +9,10 @@ Author: ShredCode <http://www.shredcode.com>
 Author URI: https://www.github.com/ShredCode 
 */
 
-DEFINE("SHRED_CODE_PLUGIN_NAME", basename(__DIR__));
-DEFINE("SHRED_CODE_TABLE_NAME", 'shred_code_filter_code');
+if (!defined('SHRED_CODE_PLUGIN_NAME')){
+    DEFINE("SHRED_CODE_PLUGIN_NAME", basename(__DIR__));
+    DEFINE("SHRED_CODE_TABLE_NAME", 'shred_code_filter_code');
+}
 
 yourls_add_action('activated_' . SHRED_CODE_PLUGIN_NAME . '/plugin.php', 'shred_code_create_code_table');
 
