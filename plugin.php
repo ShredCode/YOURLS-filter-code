@@ -1,4 +1,3 @@
-
 <?php
 /*
 Plugin Name: Status Code by Keyword 
