@@ -18,3 +18,6 @@ table will show any existing mapping.  If no mapping is shown or defined, `301` 
 
 #### Screen Shot - Admin Page
 ![Plugin Admin Page](img/Shred_Code_Plugin_page.jpg)
+
+#### Why use 301 as the default code?
+301 - Moved Permanently is used as it will let your browser know that it doesn't have to keep looking up the short url mapping but can cache it internal to the browser itself.  
